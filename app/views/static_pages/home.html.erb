@@ -1,0 +1,9 @@
+<div class="home">
+<h1> HOME PAGE </h1>
+<% if model_signed_in? %>
+	<h3> CREATE POSTS </h3><%= link_to 'Posts', new_post_path, class: 'btn btn-lg btn-success btn-margin' %>
+	<h4> TO SEE OTHER POSTS </h4><%= link_to 'Other Posts', posts_path, class: 'btn btn-lg btn-default btn-margin1' %> 
+<% else %>
+	<h2> SIGN UP TO CREATE POSTS </h2><%= link_to 'Sign Up', new_model_registration_path, class: 'btn btn-lg btn-primary btn-margin2' %>
+<% end %>
+</div>

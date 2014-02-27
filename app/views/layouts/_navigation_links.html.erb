@@ -1,0 +1,10 @@
+<%# add navigation links to this file %>
+<% if model_signed_in? %>
+	<li><%= link_to 'Sign Out', destroy_model_session_path, :method => :delete %></li>
+	<li><%= link_to 'Edit', edit_model_registration_path %></li>
+
+<% else %>
+	<li><%= link_to 'Sign In', new_model_session_path %></li>
+	<li><%= link_to 'Sign Up', new_model_registration_path %></li>
+	<li><%= link_to 'Sign in with Facebook', model_omniauth_authorize_path(:facebook) %></li>
+<% end %>

@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @comment.body %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @comment.model.email %>
+</p>
+
+<p>
+  <strong>Post:</strong>
+  FOR THE POST_ID <%= @comment.post.id %> POSTED BY <%= @comment.model.email %>
+</p>
+
+
+
+<% if (current_model.email) == (@comment.model.email) %>
+	<%= link_to 'Edit', edit_comment_path(@comment), class: 'btn btn-sm btn-info' %> 
+	<%= link_to 'Back', comments_path, class: 'btn btn-sm btn-info' %>
+<% else %> 
+	<%= link_to 'Back', comments_path, class: 'btn btn-sm btn-info' %> 
+<% end %>
+
